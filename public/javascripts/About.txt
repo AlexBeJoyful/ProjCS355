@@ -1,0 +1,9 @@
+let text = `
+
+TeamFinder is about how people find others to Play the Greatest Games.
+    With a few games in the database already, players have access to creating and personalizing their accounts so that
+     they can find and be found by the best matched players.
+
+    Players love the support that they can just log in to the TeamFinder and create and explore more players all
+    over the world.
+`;
