@@ -1,0 +1,31 @@
+<!-- views/about.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ../includes/head %>
+<body class="container">
+<% include ../includes/header %>
+
+<table>
+    <thead>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Email</td>
+    </tr>
+    </thead>
+    <tbody>
+    <%object.user.forEach(function(i) { %>
+    <tr>
+        <td><%= i.first_name%></td>
+        <td><%= i.last_name%></td>
+        <td><%= i.email%></td>
+    </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+
+
+
+
+<% include ../includes/footer %>

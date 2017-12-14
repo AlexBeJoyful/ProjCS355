@@ -13,19 +13,21 @@
 
 <table border ="1">
     <tr><th>Name</th><th>Actions</th><tr>
-        <% for(var i=0; result.length > i; i++ ) { %>
+        <% response.forEach(function(i) { %>
     <tr>
-        <td><a href="/user/?user_id=<%= result[i].user_id %>"><%= result[i].first_name %></a></td>
+
+        <td><a href="/user/viewBy/<%= i.user_id%>"> <%=i.first_name %></a></td>
         <td>
-            <button onclick="event.preventDefault();window.location.href='/user/edit/?user_id=<%= result[i].user_id %>'">Edit</button>
+            <button onclick="event.preventDefault();window.location.href='/user/update/<%= i.user_id %>'">Edit</button>
             <form action="/user/delete/" style="display:inline;">
-                <input type="hidden" name="user_id" id="user_id" value="<%= result[i].user_id %>" />
+                <input type="hidden" name="user_id" id="user_id" value="<%= i.user_id %>" />
                 <input type="submit" value="Delete" />
             </form>
 
         </td>
     </tr>
-    <% } %>
+    <% }); %>
+
 </table>
 
 
