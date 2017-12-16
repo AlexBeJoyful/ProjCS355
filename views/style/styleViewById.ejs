@@ -1,0 +1,31 @@
+<!-- views/about.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ../includes/head %>
+<body class="container">
+<% include ../includes/header %>
+
+<table>
+    <thead>
+    <tr>
+        <td>Game Mode</td>
+        <td> Game Type</td>
+        <td> Console</td>
+    </tr>
+    </thead>
+    <tbody>
+    <%object.style.forEach(function(i) { %>
+    <tr>
+        <td><%= i.game_mode%></td>
+        <td><%= i.game_type%></td>
+        <td><%= i.console%></td>
+    </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+
+
+
+
+<% include ../includes/footer %>

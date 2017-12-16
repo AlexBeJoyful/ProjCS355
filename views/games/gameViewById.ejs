@@ -1,0 +1,30 @@
+<!-- views/about.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ../includes/head %>
+<body class="container">
+<% include ../includes/header %>
+
+<table>
+    <thead>
+    <tr>
+        <table border ="1">
+            <tr><th>Game Name</th><th>Game Description</th><tr>
+        <td> </td>
+    </tr>
+    </thead>
+    <tbody>
+    <%object.games.forEach(function(i) { %>
+    <tr>
+        <td><%= i.game_name%></td>
+        <td><%= i.game_desc%></td>
+    </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+
+
+
+
+<% include ../includes/footer %>

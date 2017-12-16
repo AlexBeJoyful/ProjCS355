@@ -1,0 +1,31 @@
+<!-- views/about.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ../includes/head %>
+<body class="container">
+<% include ../includes/header %>
+
+
+<h1>Users</h1>
+<a href="/style/add">Add New Style</a> <br />
+
+<br />
+
+<table border ="1">
+    <tr><th>Styles</th><th>Actions</th><tr>
+        <% response.forEach(function(i) { %>
+    <tr>
+
+        <td><a href="/style/viewBy/<%= i.style_id%>"> <%=i.game_mode%></a></td>
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/style/update/<%= i.style_id %>'">Edit</button>
+            <form action="/style/delete/" style="display:inline;">
+                <input type="hidden" name="style_id" id="style_id" value="<%= i.style_id %>" />
+                <input type="submit" value="Delete" />
+            </form>
+
+        </td>
+    </tr>
+    <% }); %>
+
+</table>

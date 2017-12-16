@@ -1,0 +1,31 @@
+<!-- views/about.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<% include ../includes/head %>
+<body class="container">
+<% include ../includes/header %>
+
+
+<h1>Games</h1>
+<a href="/games/add">Add New Game</a> <br />
+
+<br />
+
+<table border ="1">
+    <tr><th>Games</th><th>Actions</th><tr>
+        <% response.forEach(function(i) { %>
+    <tr>
+
+        <td><a href="/games/viewBy/<%= i.game_id%>"> <%=i.game_name%></a></td>
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/games/update/<%= i.game_id %>'">Edit</button>
+            <form action="/games/delete/" style="display:inline;">
+                <input type="hidden" name="game_id" id="game_id" value="<%= i.game_id %>" />
+                <input type="submit" value="Delete" />
+            </form>
+
+        </td>
+    </tr>
+    <% }); %>
+
+</table>
